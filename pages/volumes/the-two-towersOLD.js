@@ -1,4 +1,4 @@
-import { volumes } from "../../lib/data";
+/* import { volumes } from "../../lib/data";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -25,4 +25,4 @@ export default function VolumePage() {
             </p>
         </>
     );
-}
+} */

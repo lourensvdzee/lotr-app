@@ -1,7 +1,14 @@
-import { introduction, volumes } from "../lib/data"
-import Link from "next/link"
+import { introduction, volumes } from "../lib/data";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function HomePage() {
+  const router = useRouter();
+
+  const handleClick = (slug) => {
+    router.push(`/volumes/${slug}`);
+  };
+
   return (
     <div>
       <h1>Lord of the Rings</h1>
@@ -10,7 +17,7 @@ export default function HomePage() {
       <ul>
         {volumes?.map((volume) => (
           <li key={volume.slug}>
-            <Link href={`/volumes/${volume.slug}`}>
+            <Link href={`/volumes/${volume.slug}`} onClick={() => handleClick(volume.slug)}>
               {volume.title}
             </Link>
           </li>
