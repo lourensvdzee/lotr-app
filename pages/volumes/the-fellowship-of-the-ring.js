@@ -10,7 +10,7 @@ export default function VolumePage() {
     return (
         <>
             <Link href="/">All Volumes</Link>;
-            <h1>The Fellowship Of The Ring</h1>
+            <h1>{volume.title}</h1>
             <p>{volume.description}</p>
             <ul>
                 {volume.books.map((book) => (

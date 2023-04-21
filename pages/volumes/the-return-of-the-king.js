@@ -10,7 +10,7 @@ export default function VolumePage() {
     return (
         <>
             <Link href="/">All Volumes</Link>;
-            <h1>The Return Of The King</h1>
+            <h1>{volume.title}</h1>
             <p>{volume.description}</p>
             <ul>
                 {volume.books.map((book) => (
@@ -19,7 +19,7 @@ export default function VolumePage() {
             </ul>
             <Image src={volume.cover} alt={volume.title} width={140} height={230} />
             <p>
-                <Link href="/volumes/the-fellowship-of-the-ring">previous Volume</Link>;
+                <Link href="/volumes/the-two-towers">previous Volume</Link>;
             </p>
         </>
     );
