@@ -11,15 +11,6 @@ function RenderBook() {
     const prevVolume = volumes[volumeIndex - 1];
     const nextVolume = volumes[volumeIndex + 1];
 
-    const getRandomElement = (array) => {
-        return array[Math.floor(Math.random() * array.length)];
-    };
-
-    const handleRandomClick = () => {
-        const randomVolume = getRandomElement(volumes);
-        router.push(`/volumes/${randomVolume.slug}`);
-    };
-
     return (
         <div>
             <h1>{volume.title}</h1>
@@ -32,16 +23,9 @@ function RenderBook() {
             <Image src={volume.cover} alt={volume.title} width={140} height={230} />
             <p>
                 <Link href="/">All Volumes</Link>;
-            </p>
-            <p>
-                <button onClick={handleRandomClick}>Random Volume</button>
-            </p>
-            <p>
+            </p><p>
                 {prevVolume && (
                     <Link href={`/volumes/${prevVolume.slug}`}>Previous volume: {prevVolume.title}</Link>
-                )} </p><p>
-                {nextVolume && (
-                    <Link href={`/volumes/${nextVolume.slug}`}>Next volume: {nextVolume.title}</Link>
                 )}
             </p>
         </div>
