@@ -27,6 +27,10 @@ function RenderBook() {
                 {prevVolume && (
                     <Link href={`/volumes/${prevVolume.slug}`}>Previous volume: {prevVolume.title}</Link>
                 )}
+            </p><p>
+                {nextVolume && (
+                    <Link href={`/volumes/${nextVolume.slug}`}>Next volume: {nextVolume.title}</Link>
+                )}
             </p>
         </div>
     );
