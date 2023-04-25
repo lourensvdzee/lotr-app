@@ -3,6 +3,8 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
+import GlobalStyles from "../styles.js";
+
 
 function RenderBook() {
     const router = useRouter();
@@ -18,6 +20,8 @@ function RenderBook() {
 
     return (
         <div>
+            <GlobalStyles />
+            <Image src="/resources/chevron-left.svg" alt="Back to all volumes" width={16} height={16} />
             <p>
                 <Link href="/">All Volumes</Link>;
             </p>
@@ -27,7 +31,9 @@ function RenderBook() {
                 <BackgroundContainer>
                     <ul>
                         {volume.books.map((book) => (
-                            <li key={book.ordinal}>{book.title}</li>
+                            <li key={book.ordinal}>{book.ordinal}
+                                <h5>{book.title}</h5>
+                            </li>
                         ))}
                     </ul>
                     <Image src={volume.cover} alt={volume.title} width={140} height={230} />
